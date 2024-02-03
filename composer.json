@@ -1,0 +1,13 @@
+{
+    "autoload": {
+        "psr-4": {
+            "Helpers\\": "Helpers/",
+            "Models\\": "Models/",
+            "Models\\RestaurantLocations\\": "path/to/Models/RestaurantLocations/",
+            "Interfaces\\": "Interfaces/"
+        }
+    },
+    "require": {
+        "fakerphp/faker": "^1.15"
+    }
+}
