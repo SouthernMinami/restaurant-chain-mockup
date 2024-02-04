@@ -76,13 +76,13 @@ class Employee extends User implements FileConvertible
 
     public function printInfo(): void
     {
-        printf("氏名: %s %s\n 職業: %s\n 給与: %s\n 業務開始日: %s\n 賞与: %s\n\n", $this->getFirstName(), $this->getLastName(), $this->occupation, $this->salary, $this->startDate->format("Y-m-d"), $this->rewardsList);
+        printf("Name: %s %s\n Occupation: %s\n Salary: $%s\n Start Date: %s\n Rewards: %s\n\n", $this->getFirstName(), $this->getLastName(), $this->occupation, $this->salary, $this->startDate->format("Y-m-d"), $this->rewardsList);
     }
 
     public function __toString(): string
     {
         return sprintf(
-            "職業: %s\n 給与: %s\n 業務開始日: %s\n 賞与: %s\n\n",
+            "Occupation: %s\n Salary: $%s\n Start Date: %s\n Rewards: %s\n\n",
             $this->getOccupation(),
             $this->getSalary(),
             $this->getStartDate()->format('Y-m-d'),
@@ -93,9 +93,9 @@ class Employee extends User implements FileConvertible
     public function toHTML(): string
     {
         return sprintf(
-            "<p>職業: %s<br>給与: %s<br>業務開始日: %s<br>賞与: %s<br></p>",
+            "<p>Occupation: %s<br>Salary: $%s<br>Start Date: %s<br>Rewards: %s<br></p>",
             $this->getOccupation(),
-            $this->getSalary() . "円",
+            $this->getSalary() . ' / yr',
             $this->getStartDate()->format('Y-m-d'),
             implode(', ', $this->getRewardsList())
         );
@@ -103,10 +103,10 @@ class Employee extends User implements FileConvertible
     public function toArray(): array
     {
         return [
-            "職業" => $this->occupation,
-            "給与" => $this->salary,
-            "業務開始日" => $this->startDate,
-            "賞与" => implode(", ", $this->getRewardsList())
+            "Occupation" => $this->occupation,
+            "Salary" => $this->salary,
+            "Start Date" => $this->startDate,
+            "Rewards" => implode(", ", $this->getRewardsList())
         ];
     }
 
@@ -117,10 +117,10 @@ class Employee extends User implements FileConvertible
 
     public function toMarkdown(): string
     {
-        return "- 氏名: {$this->getFirstName()} {$this->getLastName()}\n" .
-            "- 職業: {$this->occupation}\n" .
-            "- 給与: {$this->salary}\n" .
-            "- 業務開始日: {$this->startDate}\n" .
-            "- 賞与: " . implode(", ", $this->getRewardsList()) . "\n";
+        return "- Name: {$this->getFirstName()} {$this->getLastName()}\n" .
+            "- Occupation: {$this->occupation}\n" .
+            "- Salary: $this->salary\n" .
+            "- Start Date: {$this->startDate}\n" .
+            "- Rewards: " . implode(", ", $this->getRewardsList()) . "\n";
     }
 }

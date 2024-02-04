@@ -7,7 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
-    'Models\\RestaurantLocations\\' => array($baseDir . '/path/to/Models/RestaurantLocations'),
+    'Models\\RestaurantLocations\\' => array($baseDir . '/Models/RestaurantLocations'),
     'Models\\' => array($baseDir . '/Models'),
     'Interfaces\\' => array($baseDir . '/Interfaces'),
     'Helpers\\' => array($baseDir . '/Helpers'),

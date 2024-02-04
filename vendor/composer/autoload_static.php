@@ -41,7 +41,7 @@ class ComposerStaticInit4e9430ecef6ebb3e2546b25ee25787a9
         ),
         'Models\\RestaurantLocations\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/path/to/Models/RestaurantLocations',
+            0 => __DIR__ . '/../..' . '/Models/RestaurantLocations',
         ),
         'Models\\' => 
         array (

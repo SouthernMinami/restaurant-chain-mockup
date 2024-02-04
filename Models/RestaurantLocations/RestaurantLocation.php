@@ -107,44 +107,44 @@ class RestaurantLocation
 
     public function printInfo(): void
     {
-        printf("店名: {$this->name}\n 住所: {$this->address}\n 市区町村: {$this->city}\n 州/都道府県: {$this->state}\n 国: {$this->country}\n 郵便番号: {$this->postalCode}\n " . ($this->isOpen ? "営業中" : "休業中") . "\n\n");
+        printf("Name: {$this->name}\n Address: {$this->address}\n City: {$this->city}\n State: {$this->state}\n Country: {$this->country}\n Postal Code: {$this->postalCode}\n " . ($this->isOpen ? "Open" : "Closed") . "\n\n");
     }
 
     public function toString(): string
     {
         return sprintf(
-            "住所: %s\n市区町村: %s\n州/都道府県: %s\n国: %s\n郵便番号: %s\n%s\n\n",
+            "Address: %s\nCity: %s\nState: %s\nCountry: %s\nPostal Code: %s\n%s\n\n",
             $this->address,
             $this->city,
             $this->state,
             $this->country,
             $this->postalCode,
-            $this->isOpen ? "営業中" : "休業中"
+            $this->isOpen ? "Open" : "Closed"
         );
     }
 
     public function toHTML(): string
     {
         return sprintf(
-            "住所: %s<br>市区町村: %s<br>州/都道府県: %s<br>国: %s<br>郵便番号: %s<br>%s<br><br>",
+            "Address: %s<br>City: %s<br>State: %s<br>Country: %s<br>Postal Code: %s<br>%s<br><br>",
             $this->address,
             $this->city,
             $this->state,
             $this->country,
             $this->postalCode,
-            $this->isOpen ? "営業中" : "休業中"
+            $this->isOpen ? "Open" : "Closed"
         );
     }
 
     public function toArray(): array
     {
         return [
-            "住所" => $this->address,
-            "市区町村" => $this->city,
-            "州/都道府県" => $this->state,
-            "国" => $this->country,
-            "郵便番号" => $this->postalCode,
-            "営業/休業" => $this->isOpen
+            "Address" => $this->address,
+            "City" => $this->city,
+            "State" => $this->state,
+            "Country" => $this->country,
+            "Postal Code" => $this->postalCode,
+            "Open/Closed" => $this->isOpen
         ];
     }
 
@@ -155,12 +155,12 @@ class RestaurantLocation
 
     public function toMarkdown(): string
     {
-        return "- 住所: {$this->address}\n
-                - 市区町村: {$this->city}\n
-                - 州/都道府県: {$this->state}\n
-                - 国: {$this->country}\n
-                - 郵便番号: {$this->postalCode}\n
-                - 営業/休業: {$this->isOpen}\n";
+        return "- Address: {$this->address}\n
+                - City: {$this->city}\n
+                - State: {$this->state}\n
+                - Country: {$this->country}\n
+                - Postal Code: {$this->postalCode}\n
+                - Open/Closed: {$this->isOpen}\n";
     }
 
 }

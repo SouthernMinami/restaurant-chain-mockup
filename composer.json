@@ -3,7 +3,7 @@
         "psr-4": {
             "Helpers\\": "Helpers/",
             "Models\\": "Models/",
-            "Models\\RestaurantLocations\\": "path/to/Models/RestaurantLocations/",
+            "Models\\RestaurantLocations\\": "Models/RestaurantLocations/",
             "Interfaces\\": "Interfaces/"
         }
     },

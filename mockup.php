@@ -10,15 +10,15 @@ require_once 'vendor/autoload.php';
 
 // Import the RandomGenerator class
 // クエリ文字列からパラメータ取得
-$min = $_GET['min'] ?? 5;
-$max = $_GET['max'] ?? 20;
+// $min = $_GET['min'] ?? 5;
+// $max = $_GET['max'] ?? 20;
 
-// パラメータが整数であることを確認
-$min = (int) $min;
-$max = (int) $max;
+// // パラメータが整数であることを確認
+// $min = (int) $min;
+// $max = (int) $max;
 
-// ランダムなレストランチェーンの配列を生成
-$chains = RandomGenerator::generateChainsArray($min, $max);
+// // ランダムなレストランチェーンの配列を生成
+// $chains = RandomGenerator::generateChainsArray($min, $max);
 ?>
 
 <!DOCTYPE html>

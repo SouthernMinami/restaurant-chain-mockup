@@ -110,22 +110,25 @@ class RestaurantChain extends Company implements FileConvertible
     {
         return
             "ID: {$this->chainId}\n" .
-            "料理タイプ: {$this->cuisineType}\n" .
-            "店舗数: {$this->numberOfLocations}\n" .
-            "ドライブスルー: {$this->hasDriveThru}\n" .
-            "親会社: {$this->parentCompany}\n" .
+            "Cuisine Type: {$this->cuisineType}\n" .
+            "Number of Locations: {$this->numberOfLocations}\n" .
+            "Drive-Thru: {$this->hasDriveThru}\n" .
+            "Parent Company: {$this->parentCompany}\n" .
             parent::toString();
     }
 
     public function toHTML(): string
     {
         return
-            "ID: {$this->chainId}<br>" .
-            "料理タイプ: {$this->cuisineType}<br>" .
-            "店舗数: {$this->numberOfLocations}<br>" .
-            "ドライブスルー: " . ($this->hasDriveThru ? "あり" : "なし") . "<br>" .
-            "親会社: {$this->parentCompany}<br>" .
-            parent::toHTML();
+            '
+                <p>ID: ' . $this->chainId . '</p><br>
+                <p>Cuisine Type: ' . $this->cuisineType . '</p><br>
+                <p>Number of Locations: ' . $this->numberOfLocations . '</p><br>
+                <p>Drive-Thru: ' . ($this->hasDriveThru ? "Yes" : "No") . '</p><br>
+                <p>Parent Company: ' . $this->parentCompany . '</p><br>
+                <p>' . parent::toHTML() . '</p>
+            ';
+
     }
 
     public function toArray(): array
@@ -133,10 +136,10 @@ class RestaurantChain extends Company implements FileConvertible
         return [
 
             "ID" => $this->chainId,
-            "料理タイプ" => $this->cuisineType,
-            "店舗数" => $this->numberOfLocations,
-            "ドライブスルー" => $this->hasDriveThru,
-            "親会社" => $this->parentCompany,
+            "Cuisine Type" => $this->cuisineType,
+            "Number of Locations" => $this->numberOfLocations,
+            "Drive-Thru" => $this->hasDriveThru,
+            "Parent Company" => $this->parentCompany,
         ] + parent::toArray();
     }
 
@@ -149,10 +152,10 @@ class RestaurantChain extends Company implements FileConvertible
     {
         return
             "- ID: {$this->chainId}\n" .
-            "- 料理タイプ: {$this->cuisineType}\n" .
-            "- 店舗数: {$this->numberOfLocations}\n" .
-            "- ドライブスルー: " . ($this->hasDriveThru ? "あり" : "なし") . "\n" .
-            "- 親会社: {$this->parentCompany}\n" .
+            "- Cuisine Type: {$this->cuisineType}\n" .
+            "- Number of Locations: {$this->numberOfLocations}\n" .
+            "- Drive-Thru: " . ($this->hasDriveThru ? "Yes" : "No") . "\n" .
+            "- Parent Company: {$this->parentCompany}\n" .
             parent::toMarkdown();
     }
 }

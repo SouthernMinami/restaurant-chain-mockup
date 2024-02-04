@@ -106,47 +106,47 @@ class Company implements FileConvertible
 
     public function printInfo(): void
     {
-        printf("会社名: {$this->name}\n 設立年: {$this->publishYear}\n 業界: {$this->field}\n CEO: {$this->CEOName}\n 連絡先: {$this->phoneNumber}\n 企業概要: {$this->description}\n 株式公開: " . ($this->isPublicallyTraded ? "公開中" : "非公開") . "\n\n");
+        printf("Company Name: {$this->name}\n Establishment Year: {$this->publishYear}\n Industry: {$this->field}\n CEO: {$this->CEOName}\n Contact Number: {$this->phoneNumber}\n Company Description: {$this->description}\n Publicly Traded: " . ($this->isPublicallyTraded ? "Yes" : "No") . "\n\n");
     }
 
     public function toString(): string
     {
         return sprintf(
-            "会社名: %s\n設立年: %s\n業界: %s\nCEO: %s\n連絡先: %s\n企業概要: %s\n株式公開: %s\n\n",
+            "Company Name: %s\nEstablishment Year: %s\nIndustry: %s\nCEO: %s\nContact Number: %s\nCompany Description: %s\nPublicly Traded: %s\n\n",
             $this->name,
             $this->publishYear,
             $this->field,
             $this->CEOName,
             $this->phoneNumber,
             $this->description,
-            $this->isPublicallyTraded ? "公開中" : "非公開"
+            $this->isPublicallyTraded ? "Yes" : "No"
         );
     }
 
     public function toHTML(): string
     {
         return sprintf(
-            "会社名: %s<br>設立年: %s<br>業界: %s<br>CEO: %s<br>連絡先: %s<br>企業概要: %s<br>株式公開: %s<br><br>",
+            "Company Name: %s<br>Establishment Year: %s<br>Industry: %s<br>CEO: %s<br>Contact Number: %s<br>Company Description: %s<br>Publicly Traded: %s<br><br>",
             $this->name,
             $this->publishYear,
             $this->field,
             $this->CEOName,
             $this->phoneNumber,
             $this->description,
-            $this->isPublicallyTraded ? "公開中" : "非公開"
+            $this->isPublicallyTraded ? "Yes" : "No"
         );
     }
 
     public function toArray(): array
     {
         return [
-            '会社名' => $this->name,
-            '設立年' => $this->publishYear,
-            '業界' => $this->field,
+            'Company Name' => $this->name,
+            'Establishment Year' => $this->publishYear,
+            'Industry' => $this->field,
             'CEO' => $this->CEOName,
-            '連絡先' => $this->phoneNumber,
-            '企業概要' => $this->description,
-            '株式公開' => $this->isPublicallyTraded ? "公開中" : "非公開",
+            'Contact Number' => $this->phoneNumber,
+            'Company Description' => $this->description,
+            'Publicly Traded' => $this->isPublicallyTraded ? "Yes" : "No",
         ];
     }
 
@@ -157,13 +157,13 @@ class Company implements FileConvertible
 
     public function toMarkdown(): string
     {
-        return "- 会社名: {$this->name}\n
-                - 設立年: {$this->publishYear}\n
-                - 業界: {$this->field}\n
-                - CEO: {$this->CEOName}\n
-                - 連絡先: {$this->phoneNumber}\n
-                - 企業概要: {$this->description}\n
-                - 株式公開: " . ($this->isPublicallyTraded ? "公開中" : "非公開") . "\n\n";
+        return "- Company Name: {$this->name}\n
+                    - Establishment Year: {$this->publishYear}\n
+                    - Industry: {$this->field}\n
+                    - CEO: {$this->CEOName}\n
+                    - Contact Number: {$this->phoneNumber}\n
+                    - Company Description: {$this->description}\n
+                    - Publicly Traded: " . ($this->isPublicallyTraded ? "Yes" : "No") . "\n\n";
     }
 }
 
